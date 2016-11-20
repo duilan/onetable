@@ -53,6 +53,48 @@
                             <!-- <li><a href="{{ url('/login') }}">Iniciar Sesión</a></li> -->
                             <!-- <li><a href="{{ url('/register') }}">Registrar</a></li> -->
                         @else
+
+                            @if (Auth::user()->rol_id ===1)
+                            <!-- MENU ADMIN -->
+                            <li><a href="{{ url('/register') }}">Dashboard</a></li>
+                            <li><a href="{{ url('/register') }}">Negocios</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Catalogos <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('/logout') }}">Roles</a></li>
+                                    <li><a href="{{ url('/logout') }}">Paises</a></li>
+                                    <li><a href="{{ url('/logout') }}">Usuarios</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ url('/register') }}">Ajustes</a></li>
+                            <!-- FIN MENU ADMIN -->
+                            @endif
+                            @if (Auth::user()->rol_id ===2)
+                            <!-- MENU NEGOCIO -->
+                            <li><a href="{{ url('/register') }}">Dashboard</a></li>
+                            <li><a href="{{ url('/register') }}">Sucursales</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Catalogos <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('/logout') }}">Insumos</a></li>
+                                    <li><a href="{{ url('/logout') }}">Tipos de Insumo</a></li>
+                                    <li><a href="{{ url('/logout') }}">Usuarios</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{{ url('/register') }}">Ajustes</a></li>
+                            <!-- FIN MENU ADMIN -->
+                            @endif
+                            @if (Auth::user()->rol_id ===3)
+                            <!-- MENU SUCURSAL -->
+                            <li><a href="{{ url('/register') }}">Dashboard</a></li>
+                            <li><a href="{{ url('/register') }}">Reservaciones</a></li>
+                            <li><a href="{{ url('/register') }}">Ajustes</a></li>
+                            <!-- FIN MENU ADMIN -->
+                            @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>

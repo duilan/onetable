@@ -6,11 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Negocio extends Model
 {
-  protected $fillable = [
-      'fullName', 'smallName', 'RFC', 'director', 'userNegocio', 'logo' 
-  ];
+  protected $table = 'negocios';
 
-  protected $hidden = [
-      'password',
+  protected $fillable = [
+    'pais_id',
+    'user_id',
+    'razonSocial',
+    'rfc',
+    'logo',
+    'email',
+    'calle',
+    'numeroExterior',
+    'numeroInterior',
+    'colonia',
+    'delegacion',
+    'estado',
+    'codigoPostal',
+    'status'
   ];
 }

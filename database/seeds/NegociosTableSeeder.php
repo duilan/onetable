@@ -8,23 +8,21 @@ class NegociosTableSeeder extends Seeder
   {
         // Negocios
     DB::table('negocios')->insert([
-      'fullName' => 'Vips S.A de C.V',
-      'smallName' => 'Vips',
+      'pais_id' => 1,
+      'user_id' => 2,
+      'razonSocial' => 'Vips S.A de C.V',
       'rfc' => 'COHG920517AE8',
-      'director' => 'Luis Enriquez Medina Contreras',
-      'logo' => '/negocios/vips/logo.png',
-      'userNegocio' => 'vips',
-      'password' => bcrypt('secret'),
-      ]);
-
-    DB::table('negocios')->insert([
-      'fullName' => 'Chilis S.A de C.V',
-      'smallName' => 'Chilis',
-      'rfc' => 'COHG845316EU3',
-      'director' => 'Juan Antonio Garcia Monrroy',
-      'logo' => '/negocios/chilis/logo.png',
-      'userNegocio' => 'chilis',
-      'password' => bcrypt('secret'),
+      'logo' => '/logotipos/vips.png',
+      'email' => str_random(10).'@gmail.com',
+      'calle' => str_random(10),
+      'numeroExterior' => rand(100,999),
+      'numeroInterior' => rand(1,50),
+      'colonia' => str_random(15),
+      'delegacion' => str_random(15),
+      'estado' => str_random(15),
+      'codigoPostal' => rand(10000,99999),
+      'status' => 'activo',
+      'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
       ]);
   }
 }
