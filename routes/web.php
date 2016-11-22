@@ -17,12 +17,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['prefix'=>'admin'], function () {
-  Route::get('/', 'OnetableController@index');
+Route::group(['prefix'=>'admin', 'middleware' => ['auth','authUsuarioAdmin'] ], function () {
   Route::resource('usuarios', 'UsuariosController');
   Route::resource('roles', 'RolesController');
+  Route::get('/{slug?}', 'HomeController@index');
+});
+
+Route::group(['prefix'=>'negocio', 'middleware' => ['auth','authUsuarioNegocio'] ], function () {
+  Route::get('/{slug?}', 'HomeController@index');
+});
+
+Route::group(['prefix'=>'sucursal', 'middleware' => ['auth','authUsuarioSucursal'] ], function () {
+  Route::get('/{slug?}', 'HomeController@index');
 });
 
 Route::get('/home', 'HomeController@index');
-
-Route::get('/{slung?}', 'HomeController@index');
+Route::get('/{slug?}', 'HomeController@index');
