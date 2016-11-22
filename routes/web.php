@@ -17,6 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['prefix'=>'admin'], function () {
+  Route::get('/', 'OnetableController@index');
+  Route::resource('usuarios', 'UsuariosController');
+  Route::resource('roles', 'RolesController');
+});
+
 Route::get('/home', 'HomeController@index');
-Route::get('/admin', 'OnetableController@index');
+
 Route::get('/{slung?}', 'HomeController@index');

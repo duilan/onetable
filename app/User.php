@@ -21,4 +21,14 @@ class User extends Authenticatable
     'password',
     'remember_token',
   ];
+
+  public function rol()
+  {
+    return $this->belongsTo(Rol::class);
+  }
+
+  public function setPasswordAttribute($password)
+  {
+    $this->attributes['password'] = bcrypt($password);
+  }
 }
