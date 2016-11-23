@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\Usuario\StoreUsuarioRequest;
+use App\Http\Requests\Usuario\UpdateUsuarioRequest;
 use App\User;
 use App\Rol;
 
@@ -21,8 +23,9 @@ class UsuariosController extends Controller
     return view('admin.usuarios.create', compact('listaRoles'));
   }
 
-  public function store(Request $request)
+  public function store(StoreUsuarioRequest $request)
   {
+
     User::create($request->all());
     return redirect()->route('usuarios.index');
   }
@@ -39,7 +42,7 @@ class UsuariosController extends Controller
     return view('admin.usuarios.edit', compact('usuario','listaRoles'));
   }
 
-  public function update(Request $request, $id)
+  public function update(UpdateUsuarioRequest $request, $id)
   {
     if (empty($request->get('password') )) {
       $data = $request->except(['password']);

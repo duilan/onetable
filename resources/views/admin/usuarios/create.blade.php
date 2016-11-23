@@ -7,6 +7,16 @@
   <div class="panel panel-default">
     <div class="panel-heading">Administración</div>
     <div class="panel-body">
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
       <h1>Crear Usuario</h1>
       {!! Form::open(['route' => 'usuarios.store', 'method'=>'POST']) !!}
       <div class="form-group">
@@ -22,6 +32,11 @@
       <div class="form-group">
         {!! Form::label('password', 'Contraseña') !!}
         {!! Form::password('password', ['class'=> 'form-control' , 'required'])!!}
+      </div>
+
+      <div class="form-group">
+        {!! Form::label('password_confirmation', 'Repite la contraseña') !!}
+        {!! Form::password('password_confirmation', ['class'=> 'form-control' , 'required'])!!}
       </div>
 
       <div class="form-group">

@@ -7,6 +7,16 @@
   <div class="panel panel-default">
     <div class="panel-heading">Administración</div>
     <div class="panel-body">
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
       <h1>Editar Usuario</h1>
       {!! Form::open(['route' => ['usuarios.update', $usuario], 'method'=>'PATCH']) !!}
       <div class="form-group">
