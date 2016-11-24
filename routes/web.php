@@ -34,4 +34,6 @@ Route::group(['prefix'=>'sucursal', 'middleware' => ['auth','authUsuarioSucursal
 });
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/logotipos/{logo}','DisksController@logotipos');
 Route::get('/{slug?}', 'HomeController@index');
