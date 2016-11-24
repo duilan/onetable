@@ -26,7 +26,7 @@ class StoreNegocioRequest extends FormRequest
             'delegacion'     => 'required|string',
             'estado'         => 'required|string',
             'codigoPostal'   => 'required|Integer',
-            'logo'           => 'required|string'
+            'logo'           => 'required'
         ];
     }
 }

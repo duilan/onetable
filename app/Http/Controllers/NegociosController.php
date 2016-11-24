@@ -8,6 +8,9 @@ use App\Http\Requests\Negocios\UpdateNegocioRequest;
 use App\Negocio;
 use App\User;
 use App\Pais;
+use Storage;
+use File;
+use Image;
 
 class NegociosController extends Controller
 {
@@ -28,7 +31,21 @@ class NegociosController extends Controller
 
     public function store(StoreNegocioRequest $request)
     {
-        Negocio::create($request->all());
+        //Referencia del logo
+        $logoInput = $request->file('logo');
+        //imagen real
+        $logoFile = File::get($logoInput);
+        //Nombre unico
+        $logoNombre = time().'.'.$logoInput->getClientOriginalExtension();
+        //ruta del disk-Storage
+        $diskLogotipos = storage_path("app/public/logotipos/$logoNombre");
+        //Edicion de la imagen a 200x200 y se guardo en el disk
+        $logo = Image::make($logoFile)->resize(200, 200);
+        $logo->save($diskLogotipos);
+        //Guardo y redirecciono
+        $negocio = new Negocio($request->all()) ;
+        $negocio->logo = $logoNombre;
+        $negocio->save();
         return redirect()->route('negocios.index');
     }
 
@@ -48,7 +65,29 @@ class NegociosController extends Controller
 
     public function update(UpdateNegocioRequest $request, $id)
     {
-        Negocio::findOrFail($id)->update($request->all());
+        $negocio = Negocio::findOrFail($id);
+
+
+        if ($request->hasFile('logo')) {
+            //Referencia del logo
+            $logoInput = $request->file('logo');
+            //imagen real
+            $logoFile = File::get($logoInput);
+            //Nombre unico
+            $logoNombre = time().'.'.$logoInput->getClientOriginalExtension();
+            //ruta del disk-Storage
+            $diskLogotipos = storage_path("app/public/logotipos/$logoNombre");
+            //Edicion de la imagen a 200x200 y se guardo en el disk
+            $logo = Image::make($logoFile)->resize(200, 200);
+            $logo->save($diskLogotipos);
+            //Elimino la imagen vieja
+            Storage::disk('logotipos')->delete($negocio->logo);
+
+            $negocio->logo = $logoNombre;
+        }
+
+        $negocio->update();
+
         return redirect()->route('negocios.index');
     }
 

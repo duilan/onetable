@@ -17,7 +17,7 @@
                 </div>
             @endif
             <h1>Editar Negocio</h1>
-            {!! Form::open(['route' => ['negocios.update', $negocio], 'method'=>'PATCH']) !!}
+            {!! Form::open(['route' => ['negocios.update', $negocio], 'method'=>'PATCH' , 'files' =>true]) !!}
             <div class="form-group">
                 {!! Form::label('razonSocial', 'Nombre/Razon Social') !!}
                 {!! Form::text('razonSocial', $negocio->razonSocial , ['class'=> 'form-control' , 'required'])!!}
@@ -45,7 +45,7 @@
 
             <div class="form-group">
                 {!! Form::label('numeroInterior', 'Nº Interior') !!}
-                {!! Form::text('numeroInterior', $negocio->numeroInterior , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('numeroInterior', $negocio->numeroInterior , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
@@ -78,8 +78,15 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('logo', 'Logotipo') !!}
-                {!! Form::text('logo', $negocio->logo , ['class'=> 'form-control' , 'required'])!!}
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="/logotipos/{{ $negocio->logo }}" class="img-responsive">
+                    </div>
+                    <div class="col-md-10">
+                        {!! Form::label('logo', 'Logotipo') !!}
+                        {!! Form::file('logo')!!}
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
@@ -88,6 +95,11 @@
             </div>
 
             {!! Form::close() !!}
+            {{-- Boton Eliminar --}}
+            {!! Form::open(['route' => ['negocios.destroy',$negocio], 'method'=>'DELETE', 'class'=>'form-delete pull-right']) !!}
+            {!! Form::submit('Eliminar',['class'=> 'btn  btn-danger'])!!}
+            {!! Form::close() !!}
+
         </div>
     </div>
 @endsection

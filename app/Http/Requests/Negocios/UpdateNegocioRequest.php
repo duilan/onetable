@@ -10,7 +10,7 @@ class UpdateNegocioRequest extends FormRequest
     {
         return true;
     }
-    
+
     public function rules()
     {
         return [
@@ -25,8 +25,7 @@ class UpdateNegocioRequest extends FormRequest
             'colonia'        => 'required|string',
             'delegacion'     => 'required|string',
             'estado'         => 'required|string',
-            'codigoPostal'   => 'required|Integer',
-            'logo'           => 'required|string'
+            'codigoPostal'   => 'required|Integer'
         ];
     }
 }

@@ -17,7 +17,7 @@
                 </div>
             @endif
             <h1>Añadir Negocio</h1>
-            {!! Form::open(['route' => 'negocios.store', 'method'=>'POST']) !!}
+            {!! Form::open(['route' => 'negocios.store', 'method'=>'POST' , 'files' => true]) !!}
             <div class="form-group">
                 {!! Form::label('razonSocial', 'Nombre/Razon Social') !!}
                 {!! Form::text('razonSocial', null , ['class'=> 'form-control' , 'required'])!!}
@@ -45,7 +45,7 @@
 
             <div class="form-group">
                 {!! Form::label('numeroInterior', 'Nº Interior') !!}
-                {!! Form::text('numeroInterior', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('numeroInterior', null , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
@@ -80,7 +80,7 @@
 
             <div class="form-group">
                 {!! Form::label('logo', 'Logotipo') !!}
-                {!! Form::text('logo', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::file('logo')!!}
             </div>
 
             <div class="form-group">
