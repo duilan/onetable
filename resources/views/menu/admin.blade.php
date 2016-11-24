@@ -7,7 +7,7 @@
   <ul class="dropdown-menu" role="menu">
     <li><a href="{{ url('/admin/usuarios') }}">Usuarios</a></li>
     <li><a href="{{ url('/admin/roles') }}">Roles</a></li>
-    <li><a href="{{ url('/admin') }}">Paises</a></li>
+    <li><a href="{{ url('/admin/paises') }}">Paises</a></li>
   </ul>
 </li>
 <li><a href="{{ url('/admin') }}">Ajustes</a></li>
