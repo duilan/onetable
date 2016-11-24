@@ -25,6 +25,11 @@ class Negocio extends Model
         'status'
     ];
 
+    public function setNumeroInteriorAttribute($value)
+    {
+        $this->attributes['numeroInterior'] = $value ?: null;
+    }
+
     public function pais()
     {
         return $this->belongsTo(Pais::class);

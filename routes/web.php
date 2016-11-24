@@ -21,6 +21,7 @@ Route::group(['prefix'=>'admin', 'middleware' => ['auth','authUsuarioAdmin'] ], 
     Route::resource('usuarios', 'UsuariosController');
     Route::resource('roles', 'RolesController');
     Route::resource('paises', 'PaisesController');
+    Route::resource('negocios', 'NegociosController');
     Route::get('/{slug?}', 'HomeController@index');
 });
 
