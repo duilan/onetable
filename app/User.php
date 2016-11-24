@@ -22,13 +22,19 @@ class User extends Authenticatable
     'remember_token',
   ];
 
+  public function setPasswordAttribute($password)
+  {
+    $this->attributes['password'] = bcrypt($password);
+  }
+
   public function rol()
   {
     return $this->belongsTo(Rol::class);
   }
 
-  public function setPasswordAttribute($password)
+  public function negocio()
   {
-    $this->attributes['password'] = bcrypt($password);
+      return $this->hasOne(Negocio::class);
   }
+
 }

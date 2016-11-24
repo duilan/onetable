@@ -29,4 +29,9 @@ class Negocio extends Model
     {
         return $this->belongsTo(Pais::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
