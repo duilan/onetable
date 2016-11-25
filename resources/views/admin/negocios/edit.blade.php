@@ -92,14 +92,7 @@
             <div class="form-group">
                 {!! Form::submit('Guardar cambios',['class'=> 'btn btn-primary'])!!}
                 <a href = "{{route('negocios.index')}}" class='btn btn-default'>Cancelar</a>
-            </div>
-
-            {!! Form::close() !!}
-            {{-- Boton Eliminar --}}
-            {!! Form::open(['route' => ['negocios.destroy',$negocio], 'method'=>'DELETE', 'class'=>'form-delete pull-right']) !!}
-            {!! Form::submit('Eliminar',['class'=> 'btn  btn-danger'])!!}
-            {!! Form::close() !!}
-
+            </div>            
         </div>
     </div>
 @endsection

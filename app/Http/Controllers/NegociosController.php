@@ -51,7 +51,8 @@ class NegociosController extends Controller
 
     public function show($id)
     {
-        //
+        $negocio = Negocio::findOrFail($id);
+        return view('admin.negocios.show',compact('negocio'));
     }
 
     public function edit($id)
