@@ -66,8 +66,7 @@ class NegociosController extends Controller
 
     public function update(UpdateNegocioRequest $request, $id)
     {
-        $negocio = Negocio::findOrFail($id);
-
+        $negocio = Negocio::findOrFail($id)->fill($request->all());
 
         if ($request->hasFile('logo')) {
             //Referencia del logo
