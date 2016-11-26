@@ -39,4 +39,9 @@ class Negocio extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function InsumoTipos()
+    {
+        return $this->hasMany(InsumoTipo::class);
+    }
 }
