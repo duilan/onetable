@@ -15,4 +15,12 @@ class DisksController extends Controller
         }
     }
 
+    public function fotosucursal($foto = null)
+    {
+        $url = storage_path("app/public/fotosucursales/{$foto}");
+        if (file_exists($url)) {
+            return \Response::download($url);
+        }
+    }
+
 }
