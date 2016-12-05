@@ -44,4 +44,9 @@ class Negocio extends Model
     {
         return $this->hasMany(InsumoTipo::class);
     }
+
+    public function sucursales()
+    {
+        return $this->hasMany(Sucursal::class);
+    }
 }

@@ -14,6 +14,7 @@ class SucursalesTableSeeder extends Seeder
       'coordenadaLatitud' => '31938103.38193',
       'coordenadaLongitud' => '-9492443.324324',
       'foto' => 'sucursal/vipscondesa.png',
+      'descripcion' => 'Vips condesa fue construida en 2010 una de las 3 sucursales mas grandes en México',
       'status' => 'activo',
       'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
     ]);
