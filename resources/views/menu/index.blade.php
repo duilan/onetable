@@ -12,7 +12,7 @@
 
       <!-- Branding Image -->
       <a class="navbar-brand" href="{{ url('/') }}">
-        {{ config('app.name', 'Onetable') }}
+        {{ config('app.name', 'Appartable') }}
       </a>
     </div>
 

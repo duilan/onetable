@@ -75,7 +75,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Onetable
+                    Appartable
                 </div>
                 <p>Sistema para la administración de restaurantes - Laravel, VueJS</p>
                 <small>Created by <a href="https://twitter.com/duilan">@Duilan</a></small>
