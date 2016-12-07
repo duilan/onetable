@@ -26,9 +26,9 @@
 
                 <div class="form-group">
                     {!! Form::label('coordenadaLatitud', 'Ubicacion') !!}
-                    {!! Form::text('coordenadaLatitud', $sucursal->coordenadaLatitud , ['class'=> 'form-control' , 'required'])!!}
+                    {!! Form::hidden('coordenadaLatitud', $sucursal->coordenadaLatitud , ['class'=> 'form-control' , 'required'])!!}
                     {!! Form::label('coordenadaLongitud', ' ') !!}
-                    {!! Form::text('coordenadaLongitud', $sucursal->coordenadaLongitud , ['class'=> 'form-control' , 'required'])!!}
+                    {!! Form::hidden('coordenadaLongitud', $sucursal->coordenadaLongitud , ['class'=> 'form-control' , 'required'])!!}
                     <div id="map"></div>
                     <input id="buscarUbicacion" class="controls" type="text" placeholder="Buscar">
                 </div>
@@ -54,7 +54,6 @@
                     {!! Form::submit('Guardar cambios',['class'=> 'btn btn-primary'])!!}
                     <a href = "{{route('sucursales.index')}}" class='btn btn-default'>Cancelar</a>
                 </div>
-
                 {!! Form::close() !!}
             </div>
         </div>
@@ -65,7 +64,12 @@
             $(function(){
                 if ( $("#map").length > 0 ) {
                     iniciarMapa();
+                    searchBox();
+                    setExistMarker();
+                    autoCenterMarker(10000);
                 }
             });
+
+
         </script>
     @endsection

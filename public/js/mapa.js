@@ -1,7 +1,8 @@
 
 var marker;
+var map;
 function iniciarMapa() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         zoom: 5,
         center: {
             lat: 19.2464696, lng: -99.10134979999998
@@ -9,7 +10,10 @@ function iniciarMapa() {
     });
     map.addListener('click', function(e) {
         placeMarker(e.latLng, map);
+        console.log(e.latLng);
     });
+}
+function searchBox(){
     // Create the search box and link it to the UI element.
     var input = document.getElementById('buscarUbicacion');
     var searchBox = new google.maps.places.SearchBox(input);
@@ -77,15 +81,34 @@ function getCoords(marker){
     document.getElementById("coordenadaLongitud").value= marker.getPosition().lng();
 }
 
-function placeMarker(latLng, map) {
+function placeMarker(latLng) {
     if (marker) {
         marker.setPosition(latLng);
     }else{
         marker = new google.maps.Marker({
             position: latLng,
-            map: map
+            map: map,
+        });
+        marker.addListener('click', function() {
+            map.setZoom(18);
+            map.setCenter(marker.getPosition());
         });
     }
     map.panTo(latLng);
     getCoords(marker);
+}
+function setExistMarker() {
+    var lat = parseFloat(document.getElementById('coordenadaLatitud').value);
+    var lng = parseFloat(document.getElementById('coordenadaLongitud').value);
+    var newLatLng = new google.maps.LatLng(lat, lng);
+    placeMarker(newLatLng,map);
+}
+
+function autoCenterMarker(time) {
+    //el time es en milisegundos
+    map.addListener('center_changed', function() {
+        window.setTimeout(function() {
+            map.panTo(marker.getPosition());
+        }, time);
+    });
 }

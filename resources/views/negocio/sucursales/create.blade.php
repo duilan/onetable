@@ -58,6 +58,7 @@
         $(function(){
             if ( $("#map").length > 0 ) {
                 iniciarMapa();
+                searchBox();
             }
         });
     </script>
