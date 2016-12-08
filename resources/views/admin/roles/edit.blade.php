@@ -21,7 +21,7 @@
       {!! Form::open(['route' => ['roles.update',$rol], 'method'=>'PUT']) !!}
       <div class="form-group">
         {!! Form::label('nombre', 'Nombre') !!}
-        {!! Form::text('nombre', $rol->nombre , ['class'=> 'form-control' , 'required'])!!}
+        {!! Form::text('nombre', $rol->nombre , ['class'=> 'form-control'])!!}
       </div>
 
       <div class="form-group">

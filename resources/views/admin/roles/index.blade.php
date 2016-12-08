@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo', 'Roles')
-  
+
 <!-- Main -->
 @section('content')
   <div class="panel panel-default">
@@ -13,7 +13,6 @@
         <thead>
           <th>ID</th>
           <th>Nombre</th>
-
           <th>Accion</th>
         </thead>
         <tbody>
@@ -23,7 +22,6 @@
               <td>{{$rol->nombre}}</td>
               <td>
                 <a href="{{route('roles.edit',$rol->id)}}" class="btn btn-sm btn-default">Editar</a>
-
                 {!! Form::open(['route' => ['roles.destroy',$rol], 'method'=>'DELETE', 'class'=>'form-delete']) !!}
                 {!! Form::submit('Eliminar',['class'=> 'btn btn-sm btn-danger'])!!}
                 {!! Form::close() !!}
