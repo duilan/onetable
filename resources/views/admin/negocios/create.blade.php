@@ -20,27 +20,27 @@
             {!! Form::open(['route' => 'negocios.store', 'method'=>'POST' , 'files' => true]) !!}
             <div class="form-group">
                 {!! Form::label('razonSocial', 'Nombre/Razon Social') !!}
-                {!! Form::text('razonSocial', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('razonSocial', null , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('rfc', 'RFC') !!}
-                {!! Form::text('rfc', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('rfc', null , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('email', 'E-mail') !!}
-                {!! Form::text('email', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('email', null , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('calle', 'Calle') !!}
-                {!! Form::text('calle', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('calle', null , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('numeroExterior', 'Nº Exterior') !!}
-                {!! Form::text('numeroExterior', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('numeroExterior', null , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
@@ -50,32 +50,32 @@
 
             <div class="form-group">
                 {!! Form::label('colonia', 'Colonia') !!}
-                {!! Form::text('colonia', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('colonia', null , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('delegacion', 'Delegación/Municipio') !!}
-                {!! Form::text('delegacion', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('delegacion', null , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('estado', 'Estado/Localidad') !!}
-                {!! Form::text('estado', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('estado', null , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('codigoPostal', 'Codigo postal') !!}
-                {!! Form::text('codigoPostal', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('codigoPostal', null , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('pais_id', 'pais') !!}
-                {!! Form::select('pais_id', $listaPaises , null, ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::select('pais_id', $listaPaises , null, ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('user_id', 'Usuario responsable*') !!}
-                {!! Form::select('user_id', $listaUsuarios , null, ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::select('user_id', $listaUsuarios , null, ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">

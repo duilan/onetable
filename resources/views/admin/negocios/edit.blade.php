@@ -20,27 +20,27 @@
             {!! Form::open(['route' => ['negocios.update', $negocio], 'method'=>'PATCH' , 'files' =>true]) !!}
             <div class="form-group">
                 {!! Form::label('razonSocial', 'Nombre/Razon Social') !!}
-                {!! Form::text('razonSocial', $negocio->razonSocial , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('razonSocial', $negocio->razonSocial , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('rfc', 'RFC') !!}
-                {!! Form::text('rfc', $negocio->rfc , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('rfc', $negocio->rfc , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('email', 'E-mail') !!}
-                {!! Form::text('email', $negocio->email , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('email', $negocio->email , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('calle', 'Calle') !!}
-                {!! Form::text('calle', $negocio->calle , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('calle', $negocio->calle , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('numeroExterior', 'Nº Exterior') !!}
-                {!! Form::text('numeroExterior', $negocio->numeroExterior , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('numeroExterior', $negocio->numeroExterior , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
@@ -50,31 +50,31 @@
 
             <div class="form-group">
                 {!! Form::label('colonia', 'Colonia') !!}
-                {!! Form::text('colonia', $negocio->colonia , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('colonia', $negocio->colonia , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('delegacion', 'Delegación/Municipio') !!}
-                {!! Form::text('delegacion', $negocio->delegacion , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('delegacion', $negocio->delegacion , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('estado', 'Estado/Localidad') !!}
-                {!! Form::text('estado', $negocio->estado , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('estado', $negocio->estado , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('codigoPostal', 'Codigo postal') !!}
-                {!! Form::text('codigoPostal', $negocio->codigoPostal , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('codigoPostal', $negocio->codigoPostal , ['class'=> 'form-control'])!!}
             </div>
             <div class="form-group">
                 {!! Form::label('pais_id', 'pais') !!}
-                {!! Form::select('pais_id', $listaPaises , $negocio->pais_id, ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::select('pais_id', $listaPaises , $negocio->pais_id, ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('user_id', 'Usuario responsable*') !!}
-                {!! Form::select('user_id', $listaUsuarios , $negocio->user_id, ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::select('user_id', $listaUsuarios , $negocio->user_id, ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
@@ -92,7 +92,7 @@
             <div class="form-group">
                 {!! Form::submit('Guardar cambios',['class'=> 'btn btn-primary'])!!}
                 <a href = "{{route('negocios.index')}}" class='btn btn-default'>Cancelar</a>
-            </div>            
+            </div>
         </div>
     </div>
 @endsection

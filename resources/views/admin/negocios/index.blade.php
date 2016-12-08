@@ -10,40 +10,7 @@
                 <p>
                     <a href="{{ route('negocios.create')}}" class="btn btn-primary "> Añadir Negocio</a>
                     {!! $negocios->render() !!}
-                </p>
-                {{-- <table class="table table-hover">
-                    <thead>
-                        <th>ID</th>
-                        <th>Razon Social</th>
-                        <th>Logo</th>
-                        <th>Usuario</th>
-                        <th>E-mail</th>
-                        <th>Pais</th>
-                        <th>Estado</th>
-                        <th>Accion</th>
-                    </thead>
-                    <tbody>
-                        @foreach ($negocios as $negocio)
-                            <tr>
-                                <td>{{$negocio->id}}</td>
-                                <td>{{$negocio->razonSocial}}</td>
-                                <td>{{$negocio->user->name}}</td>
-                                <td><img src="{{url('/logotipos/'.$negocio->logo)}}" class="img-responsive center-block" style="width:100px"></td>
-                                <td>{{$negocio->email}}</td>
-                                <td>{{$negocio->pais->nombre}}</td>
-                                <td>{{$negocio->status}}</td>
-                                <td>
-                                    <a href="{{route('negocios.edit',$negocio->id)}}" class="btn btn-sm btn-default">Editar</a>
-
-                                    {!! Form::open(['route' => ['negocios.destroy',$negocio], 'method'=>'DELETE', 'class'=>'form-delete']) !!}
-                                    {!! Form::submit('Eliminar',['class'=> 'btn btn-sm btn-danger'])!!}
-                                    {!! Form::close() !!}
-
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table> --}}
+                </p>                
                 @foreach ($negocios as $negocio)
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail text-center">
@@ -63,7 +30,7 @@
                             </div>
                         </div>
                     </div>
-                @endforeach                
+                @endforeach
             </div>
         </div>
     @endsection
