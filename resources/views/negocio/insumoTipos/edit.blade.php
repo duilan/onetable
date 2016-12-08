@@ -20,7 +20,7 @@
             {!! Form::open(['route' => ['insumoTipos.update',$insumoTipo], 'method'=>'PUT']) !!}
             <div class="form-group">
                 {!! Form::label('nombre', 'Nombre') !!}
-                {!! Form::text('nombre', $insumoTipo->nombre , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('nombre', $insumoTipo->nombre , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">

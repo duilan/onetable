@@ -20,7 +20,7 @@
             {!! Form::open(['route' => 'insumoTipos.store', 'method'=>'POST']) !!}
             <div class="form-group">
                 {!! Form::label('nombre', 'Nombre') !!}
-                {!! Form::text('nombre', null , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('nombre', null , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">

@@ -24,7 +24,6 @@
                             <td>{{$insumoTipo->nombre}}</td>
                             <td>
                                 <a href="{{route('insumoTipos.edit',$insumoTipo->id)}}" class="btn btn-sm btn-default">Editar</a>
-
                                 {!! Form::open(['route' => ['insumoTipos.destroy',$insumoTipo], 'method'=>'DELETE', 'class'=>'form-delete']) !!}
                                 {!! Form::submit('Eliminar',['class'=> 'btn btn-sm btn-danger'])!!}
                                 {!! Form::close() !!}
