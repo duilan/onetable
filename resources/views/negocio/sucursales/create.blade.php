@@ -21,21 +21,21 @@
 
                 <div class="form-group">
                     {!! Form::label('nombre', 'Nombre o identificador') !!}
-                    {!! Form::text('nombre', null , ['class'=> 'form-control' , 'required'])!!}
+                    {!! Form::text('nombre', null , ['class'=> 'form-control'])!!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('coordenadaLatitud', 'Ubicacion') !!}
-                    {!! Form::hidden('coordenadaLatitud', null , ['class'=> 'form-control' , 'required'])!!}
+                    {!! Form::hidden('coordenadaLatitud', null , ['class'=> 'form-control'])!!}
                     {!! Form::label('coordenadaLongitud', ' ') !!}
-                    {!! Form::hidden('coordenadaLongitud', null , ['class'=> 'form-control' , 'required'])!!}
+                    {!! Form::hidden('coordenadaLongitud', null , ['class'=> 'form-control'])!!}
                     <div id="map"></div>
                     <input id="buscarUbicacion" class="controls" type="text" placeholder="Buscar">
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('descripcion', 'Descripción') !!}
-                    {!! Form::textarea('descripcion', null , ['class'=> 'form-control' , 'required'])!!}
+                    {!! Form::textarea('descripcion', null , ['class'=> 'form-control'])!!}
                 </div>
 
                 <div class="form-group">
