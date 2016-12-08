@@ -21,7 +21,7 @@
             {!! Form::open(['route' => ['paises.update',$pais], 'method'=>'PUT']) !!}
             <div class="form-group">
                 {!! Form::label('nombre', 'Nombre') !!}
-                {!! Form::text('nombre', $pais->nombre , ['class'=> 'form-control' , 'required'])!!}
+                {!! Form::text('nombre', $pais->nombre , ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">

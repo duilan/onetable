@@ -13,7 +13,6 @@
                 <thead>
                     <th>ID</th>
                     <th>Nombre</th>
-
                     <th>Accion</th>
                 </thead>
                 <tbody>
@@ -22,8 +21,7 @@
                             <td>{{$pais->id}}</td>
                             <td>{{$pais->nombre}}</td>
                             <td>
-                                <a href="{{route('paises.edit',$pais->id)}}" class="btn btn-sm btn-default">Editar</a>
-
+                                <a href="{{route('paises.edit',$pais->id)}}" class="btn btn-sm btn-default">Editar</a>                                
                                 {!! Form::open(['route' => ['paises.destroy',$pais], 'method'=>'DELETE', 'class'=>'form-delete']) !!}
                                 {!! Form::submit('Eliminar',['class'=> 'btn btn-sm btn-danger'])!!}
                                 {!! Form::close() !!}
