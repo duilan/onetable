@@ -15,7 +15,8 @@ class SucursalesController extends Controller
 {
     public function index()
     {
-        $sucursales = Sucursal::paginate(10);
+        $negocio_id = \Auth::user()->negocio->id;
+        $sucursales = Sucursal::where('negocio_id',"=",$negocio_id)->paginate(10);        
         return view('negocio.sucursales.index', compact('sucursales'));
     }
 
