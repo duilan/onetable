@@ -8,5 +8,6 @@
   <ul class="dropdown-menu" role="menu">
     <li><a href="{{ url('/negocio/insumoTipos') }}">Tipos de Insumo</a></li>
     <li><a href="{{ url('/negocio') }}">Usuarios</a></li>
+    <li><a href="{{ url('/negocio') }}">Asignar Responsables</a></li>
   </ul>
 </li>
