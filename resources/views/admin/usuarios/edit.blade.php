@@ -21,27 +21,27 @@
       {!! Form::open(['route' => ['usuarios.update', $usuario], 'method'=>'PATCH']) !!}
       <div class="form-group">
         {!! Form::label('name', 'Nombre') !!}
-        {!! Form::text('name', $usuario->name , ['class'=> 'form-control' , 'required'])!!}
+        {!! Form::text('name', $usuario->name , ['class'=> 'form-control'])!!}
       </div>
 
       <div class="form-group">
         {!! Form::label('email', 'E-mail') !!}
-        {!! Form::text('email', $usuario->email , ['class'=> 'form-control' , 'required'])!!}
+        {!! Form::text('email', $usuario->email , ['class'=> 'form-control'])!!}
       </div>
 
       <div class="form-group">
         {!! Form::label('password', 'Contraseña') !!}
-        {!! Form::password('password', ['class'=> 'form-control' , 'required'])!!}
+        {!! Form::password('password', ['class'=> 'form-control'])!!}
       </div>
 
       <div class="form-group">
         {!! Form::label('rol_id', 'Rol') !!}
-        {!! Form::select('rol_id', $listaRoles , $usuario->rol_id, ['class'=> 'form-control' , 'required'])!!}
+        {!! Form::select('rol_id', $listaRoles , $usuario->rol_id, ['class'=> 'form-control'])!!}
       </div>
 
       <div class="form-group">
         {!! Form::label('status', 'Estado') !!}
-        {!! Form::select('status', ['activo'=>'Activo','inactivo'=>'Inactivo'] , $usuario->status, ['class'=> 'form-control' , 'required'])!!}
+        {!! Form::select('status', ['activo'=>'Activo','inactivo'=>'Inactivo'] , $usuario->status, ['class'=> 'form-control'])!!}
       </div>
 
 
