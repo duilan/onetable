@@ -15,7 +15,6 @@ class InsumosController extends Controller
 
     public function index()
     {
-
         $negocio = \Auth::user()->negocio;
         $insumos = Insumo::where('negocio_id','=', $negocio->id)->paginate(10);
         return view('negocio.insumos.index' , compact('insumos'));
@@ -37,10 +36,10 @@ class InsumosController extends Controller
         //Nombre unico
         $fotoNombre = time().'.'.$fotoInput->getClientOriginalExtension();
         //ruta del disk-Storage
-        $diskFotoSucursales = storage_path("app/public/fotoinsumos/$fotoNombre");
+        $diskFotoInsumos = storage_path("app/public/fotoinsumos/$fotoNombre");
         //Edicion de la imagen a 200x200 y se guardo en el disk
         $foto = Image::make($fotoFile)->resize(250, 250);
-        $foto->save($diskFotoSucursales);
+        $foto->save($diskFotoInsumos);
         //Guardo y redirecciono
         $insumo = new Insumo($request->all()) ;
         $insumo->foto = $fotoNombre;
@@ -57,12 +56,36 @@ class InsumosController extends Controller
 
     public function edit($id)
     {
-        return view('negocio.insumos.edit');
+        $insumo = Insumo::findOrFail($id);
+        $negocio = \Auth::user()->negocio;
+        $listaInsumoTipos = InsumoTipo::where('negocio_id','=', $negocio->id)->pluck('nombre','id');
+        return view('negocio.insumos.edit', compact('insumo','listaInsumoTipos'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $insumo = Insumo::findOrFail($id)->fill($request->all());
+
+        if ($request->hasFile('foto')) {
+            //Referencia del logo
+            $fotoInput = $request->file('foto');
+            //imagen real
+            $fotoFile = File::get($fotoInput);
+            //Nombre unico
+            $fotoNombre = time().'.'.$fotoInput->getClientOriginalExtension();
+
+            //ruta del disk-Storage
+            $diskFotoInsumos = storage_path("app/public/fotoinsumos/$fotoNombre");
+            //Edicion de la imagen a 200x200 y se guardo en el disk
+            $foto = Image::make($fotoFile)->resize(250, 250);
+            $foto->save($diskFotoInsumos);
+            //Elimino la imagen vieja
+            Storage::disk('fotosucursales')->delete($insumo['original']['foto']);
+            $insumo->foto = $fotoNombre;
+        }
+        $insumo->update();
+
+        return redirect()->route('insumos.index');
     }
 
     public function destroy($id)
