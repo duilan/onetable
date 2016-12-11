@@ -28,6 +28,7 @@ Route::group(['prefix'=>'admin', 'middleware' => ['auth','authUsuarioAdmin'] ], 
 Route::group(['prefix'=>'negocio', 'middleware' => ['auth','authUsuarioNegocio'] ], function () {
     Route::resource('insumoTipos', 'InsumoTiposController');
     Route::resource('sucursales', 'SucursalesController');
+    Route::resource('insumos', 'InsumosController');
     Route::get('/{slug?}', 'HomeController@index');
 });
 

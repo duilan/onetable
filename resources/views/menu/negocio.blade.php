@@ -1,6 +1,6 @@
 <li><a href="{{ url('/negocio') }}">Inicio</a></li>
 <li><a href="{{ url('/negocio/sucursales') }}">Sucursales</a></li>
-<li><a href="{{ url('/negocio') }}">Insumos</a></li>
+<li><a href="{{ url('/negocio/insumos') }}">Insumos</a></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Gestión <span class="caret"></span>

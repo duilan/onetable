@@ -23,6 +23,17 @@ img {
     height: 200px;
 }
 
+.content-foto-insumo img{
+    width: 250px;
+    height: 250px;
+}
+
+.thumbnail-foto-insumo{
+    width: 100px;
+    height: 100px;
+}
+
+
 .controls {
   margin-top: 10px;
   border: 1px solid transparent;

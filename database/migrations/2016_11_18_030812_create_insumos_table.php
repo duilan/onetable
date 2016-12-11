@@ -17,7 +17,7 @@ class CreateInsumosTable extends Migration
       $table->string('descripcion');
       $table->decimal('precio', 5, 2);
       $table->string('foto');
-      $table->string('status');
+      $table->string('status')->default('activo');
       $table->timestamps();
 
       // references
