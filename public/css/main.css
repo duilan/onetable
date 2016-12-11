@@ -7,6 +7,22 @@
     height: 400px;
 }
 
+img {
+    /*display: block;*/
+    max-width: 100%;
+    height: auto;
+}
+
+.content-logo img{
+    width: 200px;
+    height: 200px;
+}
+
+.content-foto-sucursal img{
+    width: 500px;
+    height: 200px;
+}
+
 .controls {
   margin-top: 10px;
   border: 1px solid transparent;

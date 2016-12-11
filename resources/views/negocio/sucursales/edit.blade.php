@@ -15,7 +15,7 @@
                             @endforeach
                         </ul>
                     </div>
-                @endif                
+                @endif
                 @if (!$sucursal->user_id)
                     <div class="alert alert-danger">
                         <ul>
@@ -49,15 +49,17 @@
                     {!! Form::textarea('descripcion', $sucursal->descripcion , ['class'=> 'form-control' , 'required'])!!}
                 </div>
 
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="/fotosucursales/{{ $sucursal->foto }}" class="img-responsive">
-                        </div>
-                        <div class="col-md-6">
-                            {!! Form::label('foto', 'Fotografia') !!}
-                            {!! Form::file('foto')!!}
-                        </div>
+                <div class="text-center" data-provides="fileinput">
+                    <div class="fileinput-preview fileinput-exists content-foto-sucursal">
+                        <img src="/fotosucursales/{{ $sucursal->foto }}">
+                    </div>
+                    <div>
+                        <span class="btn btn-rose btn-round btn-file">
+                            <div class="form-group">
+                                {!! Form::label('foto', 'Fotografia') !!}
+                                {!! Form::file('foto')!!}
+                            </div>
+                        </span>
                     </div>
                 </div>
 
@@ -81,7 +83,5 @@
                     autoCenterMarker(10000);
                 }
             });
-
-
         </script>
     @endsection

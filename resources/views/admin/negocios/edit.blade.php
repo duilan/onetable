@@ -77,15 +77,17 @@
                 {!! Form::select('user_id', $listaUsuarios , $negocio->user_id, ['class'=> 'form-control'])!!}
             </div>
 
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-md-2">
-                        <img src="/logotipos/{{ $negocio->logo }}" class="img-responsive">
-                    </div>
-                    <div class="col-md-10">
-                        {!! Form::label('logo', 'Logotipo') !!}
-                        {!! Form::file('logo')!!}
-                    </div>
+            <div class="text-center" data-provides="fileinput">
+                <div class="fileinput-preview fileinput-exists content-logo">
+                    <img src="/logotipos/{{ $negocio->logo }}" >
+                </div>
+                <div>
+                    <span class="btn btn-rose btn-round btn-file">
+                        <div class="form-group">
+                            {!! Form::label('logo', 'Logotipo') !!}
+                            {!! Form::file('logo')!!}
+                        </div>
+                    </span>
                 </div>
             </div>
 

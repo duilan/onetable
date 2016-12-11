@@ -78,9 +78,18 @@
                 {!! Form::select('user_id', $listaUsuarios , null, ['class'=> 'form-control'])!!}
             </div>
 
-            <div class="form-group">
-                {!! Form::label('logo', 'Logotipo') !!}
-                {!! Form::file('logo')!!}
+            <div class="text-center" data-provides="fileinput">
+                <div class="fileinput-preview fileinput-exists content-logo">
+                    <img src="/images/image_placeholder.jpg">
+                </div>
+                <div>
+                    <span class="btn btn-rose btn-round btn-file">
+                        <div class="form-group">
+                            {!! Form::label('logo', 'Logotipo') !!}
+                            {!! Form::file('logo')!!}
+                        </div>
+                    </span>
+                </div>
             </div>
 
             <div class="form-group">

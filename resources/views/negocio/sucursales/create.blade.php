@@ -15,7 +15,7 @@
                             @endforeach
                         </ul>
                     </div>
-                @endif                
+                @endif
                 {!! Form::open(['route' => 'sucursales.store', 'method'=>'POST' , 'files' => true]) !!}
 
                 <div class="form-group">
@@ -37,9 +37,18 @@
                     {!! Form::textarea('descripcion', null , ['class'=> 'form-control'])!!}
                 </div>
 
-                <div class="form-group">
-                    {!! Form::label('foto', 'Fotografia') !!}
-                    {!! Form::file('foto')!!}
+                <div class="text-center" data-provides="fileinput">
+                    <div class="fileinput-preview fileinput-exists content-foto-sucursal">
+                        <img src="/images/image_placeholder.jpg">
+                    </div>
+                    <div>
+                        <span class="btn btn-rose btn-round btn-file">
+                            <div class="form-group">
+                                {!! Form::label('foto', 'Fotografia') !!}
+                                {!! Form::file('foto')!!}
+                            </div>
+                        </span>
+                    </div>
                 </div>
 
                 <div class="form-group">
