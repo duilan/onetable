@@ -25,7 +25,7 @@
                                 @if ($sucursal->user)
                                     <p>Responsable: {{$sucursal->user->name}}</p>
                                 @else
-                                    <p style="background:tomato;color:white">Edite para asignar responsable</p>
+                                    <p style="background:tomato;color:white"><a style="color:white" href="{{route('sucursales.edit',$sucursal->id)}}">Edite para asignar responsable</a></p>
                                 @endif
                                 <p class="group inner list-group-item-text " style="min-height:80px;max-height:80px">
                                     {{$sucursal->descripcion}}

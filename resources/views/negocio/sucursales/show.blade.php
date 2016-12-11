@@ -12,7 +12,7 @@
                 @if ($sucursal->user)
                     <div class="form-group"><b>Responsable:</b> {{$sucursal->user->name}}</div>
                 @else
-                    <div class="form-group"><b>Responsable:</b> Sin responsable - <a href="#">Asignar responsable</a> </div>
+                    <div class="form-group"><b>Responsable:</b> Sin responsable - <a href="{{route('sucursales.edit',$sucursal->id)}}">Asignar responsable</a> </div>
                 @endif
                 <div class="form-group"><img src="/fotosucursales/{{ $sucursal->foto }}" class="img-responsive"></div>
                 <div class="form-group">
