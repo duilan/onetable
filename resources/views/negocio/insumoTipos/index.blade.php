@@ -5,9 +5,8 @@
 <!-- Main -->
 @section('content')
     <div class="panel panel-default">
-        <div class="panel-heading">Tipos de Insumos</div>
-        <div class="panel-body">
-            <h1>Categorias de Insumo</h1>
+        <div class="panel-heading">Categorias de Insumos</div>
+        <div class="panel-body">            
             <p>
                 <a href="{{ route('insumoTipos.create')}}" class="btn btn-primary"> Crear categoria</a>
             </p>

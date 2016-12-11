@@ -5,7 +5,7 @@
 <!-- Main -->
 @section('content')
         <div class="panel panel-default">
-            <div class="panel-heading">Administración</div>
+            <div class="panel-heading">Añadir Sucursal</div>
             <div class="panel-body">
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
@@ -15,8 +15,7 @@
                             @endforeach
                         </ul>
                     </div>
-                @endif
-                <h1>Añadir Sucursal</h1>
+                @endif                
                 {!! Form::open(['route' => 'sucursales.store', 'method'=>'POST' , 'files' => true]) !!}
 
                 <div class="form-group">
@@ -58,7 +57,9 @@
         $(function(){
             if ( $("#map").length > 0 ) {
                 iniciarMapa();
+                addListenerMarker();
                 searchBox();
+                setExistMarker();
             }
         });
     </script>

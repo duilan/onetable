@@ -5,7 +5,7 @@
     <!-- Main -->
     @section('content')
         <div class="panel panel-default">
-            <div class="panel-heading">Sucursales Vips</div>
+            <div class="panel-heading">Sucursales - {{$negocio->razonSocial}}</div>
             <div class="panel-body">
 
                 <p>
@@ -25,7 +25,7 @@
                                 @if ($sucursal->user)
                                     <p>Responsable: {{$sucursal->user->name}}</p>
                                 @else
-                                    <p style="background:red;color:white">Falta asignar responsable</p>
+                                    <p style="background:tomato;color:white">Edite para asignar responsable</p>
                                 @endif
                                 <p class="group inner list-group-item-text " style="min-height:80px;max-height:80px">
                                     {{$sucursal->descripcion}}

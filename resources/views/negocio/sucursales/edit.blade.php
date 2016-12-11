@@ -5,7 +5,7 @@
     <!-- Main -->
     @section('content')
         <div class="panel panel-default">
-            <div class="panel-heading">Administración</div>
+            <div class="panel-heading">Editar Sucursal</div>
             <div class="panel-body">
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
@@ -16,7 +16,6 @@
                         </ul>
                     </div>
                 @endif
-                <h1>Editar Sucursal</h1>
                 {!! Form::open(['route' => ['sucursales.update', $sucursal], 'method'=>'PATCH' , 'files' =>true]) !!}
 
                 <div class="form-group">
@@ -35,7 +34,7 @@
 
                 <div class="form-group">
                     {!! Form::label('descripcion', 'Descripción') !!}
-                    {!! Form::text('descripcion', $sucursal->descripcion , ['class'=> 'form-control' , 'required'])!!}
+                    {!! Form::textarea('descripcion', $sucursal->descripcion , ['class'=> 'form-control' , 'required'])!!}
                 </div>
 
                 <div class="form-group">
@@ -64,6 +63,7 @@
             $(function(){
                 if ( $("#map").length > 0 ) {
                     iniciarMapa();
+                    addListenerMarker();
                     searchBox();
                     setExistMarker();
                     autoCenterMarker(10000);

@@ -5,7 +5,7 @@
 <!-- Main -->
 @section('content')
     <div class="panel panel-default">
-        <div class="panel-heading">Categorias de Insumo</div>
+        <div class="panel-heading">Editar Categoria de Insumo</div>
         <div class="panel-body">
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
@@ -16,7 +16,6 @@
                     </ul>
                 </div>
             @endif
-            <h1>Editar Categoria</h1>
             {!! Form::open(['route' => ['insumoTipos.update',$insumoTipo], 'method'=>'PUT']) !!}
             <div class="form-group">
                 {!! Form::label('nombre', 'Nombre') !!}
