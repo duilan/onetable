@@ -10,8 +10,8 @@ class Mesa extends Model
 
   protected $fillable = [
     'sucursal_id',
+    'identificador',
     'capacidad',
-    'ubicacion',
     'status'
   ];
 }

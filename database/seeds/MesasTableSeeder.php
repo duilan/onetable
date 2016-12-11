@@ -8,29 +8,29 @@ class MesasTableSeeder extends Seeder
   {
     DB::table('mesas')->insert([
       'sucursal_id' => 1,
+      'identificador' => 'A1',
       'capacidad' => rand(3,10),
-      'ubicacion' => 'planta baja',
       'status' => 'libre',
       'created_at' => \Carbon\Carbon::now()->toDateTimeString()
     ]);
     DB::table('mesas')->insert([
       'sucursal_id' => 1,
+      'identificador' => 'A2',
       'capacidad' => rand(3,10),
-      'ubicacion' => 'planta baja',
       'status' => 'ocupada',
       'created_at' => \Carbon\Carbon::now()->toDateTimeString()
     ]);
     DB::table('mesas')->insert([
       'sucursal_id' => 1,
+      'identificador' => 'A3',
       'capacidad' => rand(3,10),
-      'ubicacion' => 'planta baja',
       'status' => 'reservada',
       'created_at' => \Carbon\Carbon::now()->toDateTimeString()
     ]);
     DB::table('mesas')->insert([
       'sucursal_id' => 1,
+      'identificador' => 'B1',
       'capacidad' => rand(3,10),
-      'ubicacion' => 'planta baja',
       'status' => 'libre',
       'created_at' => \Carbon\Carbon::now()->toDateTimeString()
     ]);

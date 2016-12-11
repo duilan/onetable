@@ -12,9 +12,9 @@ class CreateMesasTable extends Migration
     Schema::create('mesas', function (Blueprint $table) {
       $table->increments('id');
       $table->integer('sucursal_id')->unsigned();
+      $table->string('identificador');
       $table->tinyInteger('capacidad')->default(0);
-      $table->string('ubicacion');
-      $table->string('status');
+      $table->string('status')->default('libre');
       $table->timestamps();
       //references
       $table->foreign('sucursal_id')->references('id')->on('sucursales');

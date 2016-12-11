@@ -18,9 +18,9 @@
                             <div class="content-mesa">
                                 <div class=" mesa {{ 'mesa-'.$mesa->status}}">
                                     @if ($mesa->status=='reservada')
-                                        <a href="{{route('mesas.show',$mesa->id)}}" class="btn mesa">{{++$index}}</a>
+                                        <a href="{{route('mesas.show',$mesa->id)}}" class="btn mesa">{{$mesa->identificador}}</a>
                                     @else
-                                        <a class="btn " data-toggle="modal" data-target="#editaMesa{{$mesa->id}}">{{++$index}}</a>
+                                        <a class="btn " data-toggle="modal" data-target="#editaMesa{{$mesa->id}}">{{$mesa->identificador}}</a>
                                     @endif
                                 </div>
                                 <div class="caption-mesa">
@@ -41,6 +41,10 @@
                                     <div class="modal-body">
                                         {!! Form::open(['route' => ['mesas.update',$mesa], 'method'=>'PATCH', 'class'=>'form-delete']) !!}
                                         <div class="form-group">
+                                            {!! Form::label('identificador', 'Identificador') !!}
+                                            {!! Form::text('identificador',  $mesa->identificador , ['class'=> 'form-control'])!!}
+                                        </div>
+                                        <div class="form-group">
                                             {!! Form::label('capacidad', 'Capacidad - Asientos') !!}
                                             {!! Form::text('capacidad',  $mesa->capacidad , ['class'=> 'form-control'])!!}
                                         </div>
@@ -48,6 +52,7 @@
                                             {!! Form::label('status', 'Estado') !!}
                                             {!! Form::select('status', ['libre'=>'Libre','ocupada'=>'Ocupada','fueradeservicio'=>'Fuera de servicio'] ,$mesa->status , ['class'=> 'form-control'])!!}
                                         </div>
+                                        <span>*El identificador es un numero compuesto por Piso y NºMesa</span>
                                     </div>
                                     <div class="modal-footer">
                                         {!! Form::submit('Guardar',['class'=> 'btn btn-primary'])!!}
