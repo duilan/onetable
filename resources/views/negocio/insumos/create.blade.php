@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 {!! Form::label('insumoTipo_id', 'Categoria del insumo') !!}
-                {!! Form::select('insumoTipo_id', $listaInsumoTipos , ['class'=> 'form-control'])!!}
+                {!! Form::select('insumoTipo_id', $listaInsumoTipos , null,  ['class'=> 'form-control'])!!}
             </div>
 
             <div class="form-group">
