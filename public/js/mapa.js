@@ -8,11 +8,15 @@ function iniciarMapa() {
             lat: 19.2464696, lng: -99.10134979999998
         }
     });
+}
+
+function addListenerMarker(){
     map.addListener('click', function(e) {
         placeMarker(e.latLng, map);
         console.log(e.latLng);
     });
 }
+
 function searchBox(){
     // Create the search box and link it to the UI element.
     var input = document.getElementById('buscarUbicacion');
@@ -100,8 +104,10 @@ function placeMarker(latLng) {
 function setExistMarker() {
     var lat = parseFloat(document.getElementById('coordenadaLatitud').value);
     var lng = parseFloat(document.getElementById('coordenadaLongitud').value);
-    var newLatLng = new google.maps.LatLng(lat, lng);
-    placeMarker(newLatLng,map);
+    if (lat && lng) {
+        var newLatLng = new google.maps.LatLng(lat, lng);
+        placeMarker(newLatLng,map);
+    }
 }
 
 function autoCenterMarker(time) {
