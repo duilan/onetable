@@ -78,7 +78,7 @@ class SucursalesController extends Controller
             $foto = Image::make($fotoFile)->resize(500, 200);
             $foto->save($diskFotoSucursales);
             //Elimino la imagen vieja
-            Storage::disk('fotosucursales')->delete($sucursal->foto);
+            Storage::disk('fotosucursales')->delete($sucursal['original']['foto']);
             $sucursal->foto = $fotoNombre;
         }
         $sucursal->update();
@@ -88,7 +88,9 @@ class SucursalesController extends Controller
 
     public function destroy($id)
     {
-        Sucursal::findOrFail($id)->delete();
+        $sucursal = Sucursal::findOrFail($id);
+        $sucursal->delete();
+        Storage::disk('fotosucursales')->delete($sucursal->foto);
         return redirect()->route('sucursales.index');
     }
 }

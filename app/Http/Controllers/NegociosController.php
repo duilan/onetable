@@ -81,7 +81,7 @@ class NegociosController extends Controller
             $logo = Image::make($logoFile)->resize(200, 200);
             $logo->save($diskLogotipos);
             //Elimino la imagen vieja
-            Storage::disk('logotipos')->delete($negocio->logo);
+            Storage::disk('logotipos')->delete($negocio['original']['logo']);
 
             $negocio->logo = $logoNombre;
         }
@@ -93,7 +93,9 @@ class NegociosController extends Controller
 
     public function destroy($id)
     {
-        Negocio::findOrFail($id)->delete();
+        $negocio = Negocio::findOrFail($id);
+        $negocio->delete();
+        Storage::disk('logotipos')->delete($negocio->logo);        
         return redirect()->route('negocios.index');
     }
 }
