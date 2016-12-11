@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Negocio extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'negocios';
 
     protected $fillable = [
@@ -22,7 +25,8 @@ class Negocio extends Model
         'delegacion',
         'estado',
         'codigoPostal',
-        'status'
+        'status',
+        'deleted_at'
     ];
 
     public function setNumeroInteriorAttribute($value)

@@ -26,6 +26,7 @@ class CreateNegociosTable extends Migration
             $table->Integer('codigoPostal');
             $table->string('status')->default('activo');
             $table->timestamps();
+            $table->softDeletes();
 
             // references keys
             $table->foreign('pais_id')->references('id')->on('paises');
