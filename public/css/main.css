@@ -75,3 +75,53 @@ img {
   font-size: 13px;
   font-weight: 300;
 }
+
+.content-mesa{
+    margin: 20px 0px;
+    text-align: center;
+    width: 70%;
+}
+
+.mesa{
+    border-radius: 0 30px 0 0;
+}
+
+.mesa-libre{
+        background-color: #2ab27b;
+}
+.mesa-ocupada{
+        background-color: tomato;
+}
+.mesa-reservada{
+        background-color: orange;
+}
+
+.mesa-fueradeservicio{
+        background-color: grey;
+}
+
+.mesa a{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    background-color: none;
+}
+
+.mesa a:hover{
+    color:black;
+    -webkit-transition: all .2s ease-in-out;
+}
+
+.caption-mesa {
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    bottom: 0;
+    width: 100%;
+    max-height: 40%;
+    overflow: hidden;
+    font-size: 11px;
+    color: #FFF;
+    border-radius: 0 0 0px 30px;
+}

@@ -33,6 +33,7 @@ Route::group(['prefix'=>'negocio', 'middleware' => ['auth','authUsuarioNegocio']
 });
 
 Route::group(['prefix'=>'sucursal', 'middleware' => ['auth','authUsuarioSucursal'] ], function () {
+    Route::resource('mesas', 'MesasController');
     Route::get('/{slug?}', 'HomeController@index');
 });
 
