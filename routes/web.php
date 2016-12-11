@@ -39,4 +39,5 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/logotipos/{logo}','DisksController@logotipos');
 Route::get('/fotosucursales/{foto}','DisksController@fotosucursal');
+Route::get('/fotoinsumos/{foto}','DisksController@fotoinsumo');
 Route::get('/{slug?}', 'HomeController@index');

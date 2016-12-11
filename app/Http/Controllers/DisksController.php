@@ -23,4 +23,12 @@ class DisksController extends Controller
         }
     }
 
+    public function fotoinsumo($foto = null)
+    {
+        $url = storage_path("app/public/fotoinsumos/{$foto}");
+        if (file_exists($url)) {
+            return \Response::download($url);
+        }
+    }
+
 }
