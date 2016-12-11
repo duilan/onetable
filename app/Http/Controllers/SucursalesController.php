@@ -22,7 +22,6 @@ class SucursalesController extends Controller
 
     public function create()
     {
-        $listaUsuarios = User::where('rol_id','=', 3)->pluck('name','id');
         return view('negocio.sucursales.create' , compact('listaUsuarios'));
     }
 
@@ -56,7 +55,8 @@ class SucursalesController extends Controller
     public function edit($id)
     {
         $sucursal = Sucursal::findOrFail($id);
-        return view('negocio.sucursales.edit', compact('sucursal'));
+        $listaUsuarios = User::where('rol_id','=', 3)->pluck('name','id');
+        return view('negocio.sucursales.edit', compact('sucursal','listaUsuarios'));
 
     }
 

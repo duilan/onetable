@@ -15,12 +15,24 @@
                             @endforeach
                         </ul>
                     </div>
+                @endif                
+                @if (!$sucursal->user_id)
+                    <div class="alert alert-danger">
+                        <ul>
+                            Esta sucursal aun no tiene responsable asignado , seleccione uno y guarde
+                        </ul>
+                    </div>
                 @endif
                 {!! Form::open(['route' => ['sucursales.update', $sucursal], 'method'=>'PATCH' , 'files' =>true]) !!}
 
                 <div class="form-group">
                     {!! Form::label('nombre', 'Nombre o identificador') !!}
                     {!! Form::text('nombre', $sucursal->nombre , ['class'=> 'form-control' , 'required'])!!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('user_id', 'Usuario responsable') !!}
+                    {!! Form::select('user_id', $listaUsuarios , $sucursal->user_id , ['class'=> 'form-control'])!!}
                 </div>
 
                 <div class="form-group">
