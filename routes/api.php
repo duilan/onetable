@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Negocio;
+use App\Sucursal;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +14,16 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+Route::get('/negocios', function (Request $request) {
+    $negocios = Negocio::where('status','=','activo')
+                        ->get(['id','razonSocial as fullName','logo']);
+    return response()->json($negocios);
+})->middleware('api');
+
+
+Route::get('/negocios/{id}', function (Request $request ,$id) {
+    $sucursal = Sucursal::where('negocio_id','=',$id)
+                        ->join('users', 'sucursales.user_id', '=', 'users.id')
+                        ->get(['sucursales.id as id_sucursal','sucursales.nombre','sucursales.descripcion as description','users.name as encargado','sucursales.foto as photo']);
+    return response()->json($sucursal);
+})->middleware('api');
