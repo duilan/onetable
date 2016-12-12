@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mesa;
 
-class MesasController extends Controller
+class AjustesSucursalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class MesasController extends Controller
      */
     public function index()
     {
-        $mesas = Mesa::all();
-        return view('sucursal.mesas.index', compact('mesas'));
+        $mesas = Mesa::paginate(10);
+        return view('sucursal.ajustes.index', compact('mesas'));
     }
 
     /**
@@ -25,7 +25,7 @@ class MesasController extends Controller
      */
     public function create()
     {
-        return view('sucursal.mesas.create');
+        //
     }
 
     /**
@@ -36,10 +36,7 @@ class MesasController extends Controller
      */
     public function store(Request $request)
     {
-        $mesa = new Mesa($request->all()) ;
-        $mesa->sucursal_id = \Auth::user()->sucursal->id;
-        $mesa->save();
-        return redirect()->route('ajustes.index');
+        //
     }
 
     /**
@@ -61,8 +58,7 @@ class MesasController extends Controller
      */
     public function edit($id)
     {
-        $mesa = Mesa::findOrFail($id);
-        return view('sucursal.mesas.edit', compact('mesa'));
+        //
     }
 
     /**
@@ -75,9 +71,8 @@ class MesasController extends Controller
     public function update(Request $request, $id)
     {
         Mesa::findOrFail($id)->update($request->all());
-        return redirect()->route('mesas.index');
+        return redirect()->route('ajustes.index');
     }
-    
 
     /**
      * Remove the specified resource from storage.
@@ -87,8 +82,6 @@ class MesasController extends Controller
      */
     public function destroy($id)
     {
-        $mesa = Mesa::findOrFail($id);
-        $mesa->delete();
-        return redirect()->route('ajustes.index');
+        //
     }
 }

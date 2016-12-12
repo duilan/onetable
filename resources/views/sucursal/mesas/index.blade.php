@@ -11,7 +11,6 @@
                 <span class="label label-warning">Reservada</span>
                 <span class="label label-danger">Ocupada</span>
                 <span class="label label-default">Fuera de servicio</span>
-
                 <div class="row">
                     @foreach ($mesas as $index => $mesa)
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-2">
@@ -25,8 +24,6 @@
                                 </div>
                                 <div class="caption-mesa">
                                     <span>{{ $mesa->capacidad }} Sillas</span>
-                                    <br>
-                                    <span>{{ $mesa->ubicacion }}</span>
                                 </div>
                             </div>
                         </div>
@@ -41,18 +38,9 @@
                                     <div class="modal-body">
                                         {!! Form::open(['route' => ['mesas.update',$mesa], 'method'=>'PATCH', 'class'=>'form-delete']) !!}
                                         <div class="form-group">
-                                            {!! Form::label('identificador', 'Identificador') !!}
-                                            {!! Form::text('identificador',  $mesa->identificador , ['class'=> 'form-control'])!!}
-                                        </div>
-                                        <div class="form-group">
-                                            {!! Form::label('capacidad', 'Capacidad - Asientos') !!}
-                                            {!! Form::text('capacidad',  $mesa->capacidad , ['class'=> 'form-control'])!!}
-                                        </div>
-                                        <div class="form-group">
                                             {!! Form::label('status', 'Estado') !!}
                                             {!! Form::select('status', ['libre'=>'Libre','ocupada'=>'Ocupada','fueradeservicio'=>'Fuera de servicio'] ,$mesa->status , ['class'=> 'form-control'])!!}
                                         </div>
-                                        <span>*El identificador es un numero compuesto por Piso y NºMesa</span>
                                     </div>
                                     <div class="modal-footer">
                                         {!! Form::submit('Guardar',['class'=> 'btn btn-primary'])!!}
