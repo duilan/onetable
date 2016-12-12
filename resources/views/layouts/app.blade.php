@@ -38,7 +38,8 @@
   <script src="/js/material.min.js"></script>
   <script src="/js/material-kit.js"></script>
   <script src="/js/mapa.js"></script>
-  <script src="/js/jasny-bootstrap.min.js"></script>    
+  <script src="/js/jasny-bootstrap.min.js"></script>
+  <script src="/js/qrcode/html5-qrcode.min.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3Cg477hprxbKw-3bOhVM0vJyBH_i_FCk&libraries=places"></script>
   @yield('scripts')
 </body>

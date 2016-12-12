@@ -17,7 +17,7 @@
                             <div class="content-mesa">
                                 <div class=" mesa {{ 'mesa-'.$mesa->status}}">
                                     @if ($mesa->status=='reservada')
-                                        <a href="{{route('mesas.show',$mesa->id)}}" class="btn mesa">{{$mesa->identificador}}</a>
+                                        <a href="{{route('reservaciones.show',$mesa->id)}}" class="btn mesa">{{$mesa->identificador}}</a>
                                     @else
                                         <a class="btn " data-toggle="modal" data-target="#editaMesa{{$mesa->id}}">{{$mesa->identificador}}</a>
                                     @endif

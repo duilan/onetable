@@ -83,7 +83,7 @@ img {
 }
 
 .mesa{
-    border-radius: 0 30px 0 0;
+    border-radius: 20px 20px 0 0;
 }
 
 .mesa-libre{
@@ -123,5 +123,16 @@ img {
     overflow: hidden;
     font-size: 11px;
     color: #FFF;
-    border-radius: 0 0 0px 30px;
+    border-radius: 0 0 20px 20px;
+}
+
+.video-qrcode{
+    width:400px;
+    height:400px;
+    margin:0 auto;
+}
+
+.video-qrcode video{
+    border-radius: 50%;
+
 }

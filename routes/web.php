@@ -34,6 +34,7 @@ Route::group(['prefix'=>'negocio', 'middleware' => ['auth','authUsuarioNegocio']
 
 Route::group(['prefix'=>'sucursal', 'middleware' => ['auth','authUsuarioSucursal'] ], function () {
     Route::resource('mesas', 'MesasController');
+    Route::resource('reservaciones', 'ReservacionesController');
     Route::resource('ajustes', 'AjustesSucursalController');
     Route::get('/{slug?}', 'HomeController@index');
 });
